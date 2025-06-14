@@ -1,17 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon",
     "build": "tsc",
-    "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["StayFinder", "Backend", "API"],
+  "author": "Annany Vishwakarma",
   "license": "ISC",
-  "description": "",
+  "description": "StayFinder Backend API",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "dotenv": "^16.5.0",
