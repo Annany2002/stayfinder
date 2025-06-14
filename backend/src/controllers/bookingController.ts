@@ -10,14 +10,17 @@ export const createBooking = async (req: Request, res: Response) => {
       $or: [{ checkin: { $lt: checkout }, checkout: { $gt: checkin } }],
     });
     if (conflict) {
-      return res
+      res
         .status(409)
         .json({ message: "Listing is already booked for the selected dates" });
+      return;
     }
     const booking = new Booking({ user_id, listing_id, checkin, checkout });
     await booking.save();
     res.status(201).json(booking);
+    return;
   } catch (error) {
     res.status(500).json({ message: "Failed to create booking", error });
+    return;
   }
 };
