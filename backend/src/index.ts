@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import authRoutes from "./routes/authRoutes";
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("StayFinder Backend API");
 });
+
+app.use("/api/auth", authRoutes);
 
 async function startServer() {
   try {
