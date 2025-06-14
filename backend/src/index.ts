@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes";
 import listingRoutes from "./routes/listingRoutes";
+import bookingRoutes from "./routes/bookingRoutes";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/listings", listingRoutes);
+app.use("/api/bookings", bookingRoutes);
 
 async function startServer() {
   try {
